@@ -7,6 +7,7 @@ int main() {
 		for(int j = 2; j < i-1; j++) {
 			//std::cout << i << "%" << j << "=" << i%j << "\n";
 			if(i % j == 0) {
+                #pragma omp critical
 				std::cout << i << "\n";
 				break;
 			}
