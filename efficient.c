@@ -1,12 +1,13 @@
 #include <iostream>
 
 int main() {
-	bool numbers[10] = {}; //init with false
+	bool numbers[100000] = {}; //init with false
 	for(int Checker = 2; Checker < sizeof(numbers); Checker++) {
-		for(int i = 1; i < Checker - 1; i++) {
+		for(int i = 1; i < sizeof(numbers); i++) {
 			if(!numbers[i]) {
-				if(i%Checker == 0) {
-					numbers[i] == true;
+				//std::cout << i << "%" << Checker << "=" << i%Checker << "\n";
+				if(i%Checker == 0 && Checker < i) {
+					numbers[i] = true;
 				}
 			}
 		}
